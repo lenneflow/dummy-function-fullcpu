@@ -26,12 +26,12 @@ public class FunctionController {
 
     final RestTemplate restTemplate;
 
-    @GetMapping("ping")
+    @GetMapping("/ping")
     public String ping(){
         return "Dummy function fullcpu is working fine!";
     }
 
-    @PostMapping("start")
+    @PostMapping("/start")
     @Async
     public void fullcpu(@RequestBody FunctionPayload functionPayload){
         String callBackUrl = functionPayload.getCallBackUrl();
